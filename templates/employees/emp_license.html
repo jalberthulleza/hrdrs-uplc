@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+	{{ license.name }}
+	{{ license.rating }}
+	{{ license.exam_date|date:"M d, Y" }}
+	{{ license.exam_place }}
+	{{ license.license_no }}
+	{{ license.validity_date|date:"M d, Y" }}
+	<br>
+	<form method='POST'>{% csrf_token %}
+		{{ form }}
+		<button type='submit'>Edit</button>
+	</form>
+{% endblock %}

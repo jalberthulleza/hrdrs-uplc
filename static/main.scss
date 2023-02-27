@@ -1,0 +1,21 @@
+
+// $theme-colors: (
+//     "primary":rgb(187, 144, 13),
+//     "light":#e1e9f5,
+// );
+
+$primary:rgb(187, 144, 13);
+
+@import 'node_modules/bootstrap/scss/bootstrap';
+
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.css';
+
+.dark-mode {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+.bg-gradient-primary{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,0,22,1) 100%, rgba(0,212,255,1) 100%);
+}

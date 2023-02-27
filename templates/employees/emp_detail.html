@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block content %}
+--PERSONAL INFORMATION--
+<br>
+{{ emp.user.last_name }}
+{{ emp.user.first_name }}
+{{ emp.middle_name }}
+{{ emp.extension_name }}
+{{ emp.birthdate }}
+{{ emp.sex }}
+{{ emp.civil_status }}
+{{ emp.height }}
+{{ emp.weight }}
+{{ emp.blood_type }}
+{{ emp.citizenship }}
+{{ emp.address1 }} {{ emp.address2.name }} {{ emp.address3.name }} {{ emp.address4.name }}
+{{ emp.zip_code }}
+{{ emp.provincial_address }}
+{{ emp.if_province }}
+{{ emp.telephone_no }}
+{{ emp.mobile_no }}
+{{ emp.s_last_name }}
+{{ emp.s_first_name }}
+{{ emp.s_middle_name }}
+{{ emp.s_extension_name }}
+{{ emp.s_occupation }}
+{{ emp.s_employer }}
+{{ emp.s_business_address }}
+{{ emp.s_mobile_no }}
+{{ emp.f_last_name }}
+{{ emp.f_first_name }}
+{{ emp.f_middle_name }}
+{{ emp.f_extension_name }}
+{{ emp.m_last_name }}
+{{ emp.m_first_name }}
+{{ emp.m_middle_name }}
+<br>
+<form method='POST'>{% csrf_token %}
+	{{ info_form }}
+	<button type='submit'>Edit</button>
+</form>
+<br>
+<br>
+-----Family
+<form method='POST'>{% csrf_token %}
+	{{ fam_form }}
+	<button type='submit'>Add</button>
+</form>
+<br>
+{% for fam in emp_family %}
+	{{ fam.last_name }}
+	<a href="{% url 'family' fam.id %}">{{ fam.first_name }}</a>
+	{{ fam.middle_name }}
+	{{ fam.birthdate }}
+	{{ fam.relation }}
+	<br>
+{% endfor %}
+<br>
+<br>
+--EMPLOYMENT INFORMATION--
+<br>
+{{ emp.employment.emp_status }}
+{{ emp.employment.gsis }}
+{{ emp.employment.pagibig }}
+{{ emp.employment.philhealth }}
+{{ emp.employment.sss }}
+{{ emp.employment.tin }}
+{{ emp.employment.agency_emp_no }}
+{{ emp.employment.date_hired }}
+{{ emp.employment.present_designation }}
+{{ emp.employment.salary_grade }}
+{{ emp.employment.skills }}
+{{ emp.employment.non_acad_distinction }}
+{{ emp.employment.organization }}
+<br>
+<form method='POST'>{% csrf_token %}
+	{{ emp_form }}
+	<button type='submit'>Edit</button>
+</form>
+<br>
+<br>
+--EDUCATIONAL BACKGROUND--
+<br>
+{{ emp.education.e_school_name }}
+{{ emp.education.e_earned }}
+{{ emp.education.e_graduation_date }}
+{{ emp.education.e_honors }}
+<br>
+{{ emp.education.h_school_name }}
+{{ emp.education.h_earned }}
+{{ emp.education.h_graduation_date }}
+{{ emp.education.h_honors }}
+<br>
+{{ emp.education.c_school_name }}
+{{ emp.education.c_course }}
+{{ emp.education.c_start_year }}
+{{ emp.education.c_end_year }}
+{{ emp.education.c_earned }}
+{{ emp.education.c_graduation_date }}
+{{ emp.education.c_honors }}
+<br>
+{{ emp.education.m_school_name }}
+{{ emp.education.m_course }}
+{{ emp.education.m_start_year }}
+{{ emp.education.m_end_year }}
+{{ emp.education.m_earned }}
+{{ emp.education.m_graduation_date }}
+{{ emp.education.m_honors }}
+<br>
+{{ emp.education.d_school_name }}
+{{ emp.education.d_course }}
+{{ emp.education.d_start_year }}
+{{ emp.education.d_end_year }}
+{{ emp.education.d_earned }}
+{{ emp.education.d_graduation_date }}
+{{ emp.education.d_honors }}
+<br>
+<form method='POST'>{% csrf_token %}
+	{{ educ_form }}
+	<button type='submit'>Edit</button>
+</form>
+<br>
+<br>
+-----License
+<form method='POST'>{% csrf_token %}
+	{{ lic_form }}
+	<button type='submit'>Add</button>
+</form>
+{% for license in emp_license %}
+	<a href="{% url 'license' license.id %}">{{ license.name }}</a>
+	{{ license.rating }}
+	{{ license.exam_date }}
+	{{ license.exam_place }}
+	{{ license.license_no }}
+	{{ license.validity_date }}
+	<br>
+{% endfor %}
+<br>
+<br>
+--Questions
+<br>
+{{ emp.question.q1 }}
+{{ emp.question.q2 }}
+{{ emp.question.q3 }}
+{{ emp.question.q4 }}
+{{ emp.question.q5 }}
+{{ emp.question.q6 }}
+{{ emp.question.q7 }}
+{{ emp.question.q8 }}
+{{ emp.question.q9 }}
+{{ emp.question.q10 }}
+{{ emp.question.q11 }}
+{{ emp.question.q12 }}
+<br>
+<form method='POST'>{% csrf_token %}
+	{{ q_form }}
+	<button type='submit'>Edit</button>
+</form>
+{% endblock %}

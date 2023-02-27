@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+	{{ family.last_name }}
+	{{ family.first_name }}
+	{{ family.middle_name }}
+	{{ family.birthdate|date:"M d, Y" }}
+	{{ family.relation }}
+	<br>
+	<form method='POST'>{% csrf_token %}
+		{{ form }}
+		<button type='submit'>Edit</button>
+	</form>
+{% endblock %}

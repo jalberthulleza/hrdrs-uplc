@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+	<table class='table table-striped' style="width:100%">
+		<thead class='thead-dark'>
+			<tr>
+				<th scope='col'>Last Name</th>
+				<th scope='col'><small>First Name</small></th>
+				<th scope='col'><small>Middle Name</small></th>
+				<th scope='col'><small>Birthdate</small></th>
+				<th scope='col'><small>Address</small></th>
+				<th scope='col'><small>Employment Status</small></th>
+				<th scope='col'><small>E-Mail</small></th>
+				<th scope='col'><small>Mobile No</small></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for obj in list %}
+				<tr>
+					<td><a href="{% url 'detail' obj.id %}"><font color='#000000'>{{ obj.last_name }}</font></a></td>
+					<td><small>{{ obj.first_name }}</small></td>
+					<td><small>{{ obj.middle_name }}</small></td>
+					<td><small>{{ obj.birthdate|date:"M d, Y" }}</small></td>
+					<td><small>{{ obj.address1 }} {{ obj.address2 }} {{ obj.address3 }} {{ obj.address4 }}</small></td>
+					<td><small>{{ obj.employment.emp_status }}</small></td>
+					<td><small>{{ obj.email }}</small></td>
+					<td><small>{{ obj.mobile_no }}</small></td>
+				</tr>
+			{% empty %}
+				<tr>
+					<td colspan="7">No data</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endblock %}

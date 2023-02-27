@@ -1,0 +1,110 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap-icon.css' %}">
+    <!-- <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-icon.css"> -->
+    <title>HRDRS PORTAL</title>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-gradient-primary text-white shadow-sm">
+        <div class="container-fluid px-4">
+                 <a class="text-warning" id="sidebarToggle"><i class="bi bi-list" style="font-size:1rem"></i></a>
+            <div class="sidebar-heading"> <a href="home.html" class="nav-link text-white px-2"> HRDRS P<i class="bi bi-person"></i>RTAL</a></div>
+
+                            
+            <button class="navbar-toggler nav-bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span> 
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+            
+                <li class="nav-item dropdown">
+               
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-person"></i>
+                    !Harvey Mendoza
+                </a>
+                <ul class="dropdown-menu ">
+                    <li>
+                        <a class="dropdown-item" href="login.html">
+                            !Sign Out
+                        </a>
+
+                    </li>
+
+                </ul>
+                </li>
+            </ul>
+            <form class="d-flex">
+            
+            </form>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar-->
+        <div class="border-end bg-white shadow" id="sidebar-wrapper">
+            <!-- if else for  active sidebar menu -->
+            <div class="list-group list-group-flush pt-4">
+                <a href="{% static 'profile' %}" class="list-group-item list-group-item-action border-0"><b class="ps-4"><i class="bi bi-house-door pe-4"></i> Dashboard</b></a>
+                <a href="#" class="list-group-item list-group-item-action border-0"><b class="ps-4"><i class="bi bi-people pe-4"></i> Employees</b></a>
+            </div>
+            
+        </div>
+        <!-- Page content wrapper-->
+        <div id="page-content-wrapper">
+            <main class="py-4">
+                <!-- main -->
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-10">
+                            <h1 class="fw-bold pb-4">Dashboard</h1>
+                            <div class="row">
+                            <div class="col-md-6">
+                                    <div class="card border-0 shadow rounded-4 pt-2 mb-4">
+                                        <div class="card-body px-4">
+                                            <h3 class="fs-2">Welcome, !Harvey Mendoza</h3>
+                                            <p href="login.html">!Sign Out</p>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <div class="card border-0 shadow rounded-4 pt-2">
+                                        <div class="card-body">
+                                            <h3 class="fs-2">HRDRS PORTAL</h3>
+                                            <p>UP LAW CENTER</p>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center text-secondary">
+                        <h3 class="fs-2 pt-4 mt-4"> HRDRS P<i class="bi bi-person"></i>RTAL</h3>
+                        <p>Version 1.0</p>
+                    </div>
+                </div>
+            </main>
+            <!-- main end -->
+        </div>
+    </div>
+</body>
+<script src="{% static 'assets/js/sidebar.js' %}"></script>
+<script src="{% static 'assets/js/popper.min.js' %}" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/bootstrap.min.js' %}" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<!-- <script src="assets/js/sidebar.js"></script>
+<script src="assets/js/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="assets/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> -->
+</html>
