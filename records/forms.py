@@ -42,6 +42,7 @@ class License_Form(forms.ModelForm):
 
 class Family_Form(forms.ModelForm):
 	birthdate = forms.DateField(widget=DateInput)
+
 	class Meta:
 		model = Family
 		fields = ['last_name', 'first_name', 'middle_name', 'birthdate','relation']
@@ -57,7 +58,45 @@ class Address1_Form(forms.ModelForm):
 		fields = ['house', 'street', 'village']
 
 class Personal_Info_Form(forms.ModelForm):
-	birthdate = forms.DateField(widget=DateInput)
+	first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	middle_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	email = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	extension_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	birthdate = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	birthplace = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	sex = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	civil_status = forms.CharField(max_length=100, widget=forms.DateInput(attrs={'class': 'form-control'}))
+	height = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	weight = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	blood_type = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	citizenship = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	address1 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	address2 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	address3 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	address4 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	zip_code = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	provincial_address = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	if_province = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	telephone_no = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	mobile_no = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_middle_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_extension_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_occupation= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_employer = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_business_address = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_employer = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	s_mobile_no = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	f_first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	f_last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	f_middle_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	f_extension_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	m_last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	m_first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	m_middle_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
 	class Meta:
 		model = Personal_Info
 		fields = [

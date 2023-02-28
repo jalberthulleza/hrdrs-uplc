@@ -1,7 +1,298 @@
 {% extends 'base.html' %}
 {% block content %}
-<form method='POST'>{% csrf_token %}
-	{{ form }}
-	<button type='submit'>Register</button>
-</form>
+<div class="row justify-content-center">
+	<div class="col-md-12">
+		<div class="d-flex flex-row align-items-center justify-content-between">
+			<h1 class="fw-bold">Create Employee</h1>
+		</div>
+		<form method='POST'>{% csrf_token %}
+		<div class="row py-4">
+			<div class="col-md-8">
+				<div class="card p-4 mb-3">
+						<div class="row mb-3">
+							<h3 class="text-primary">
+								Personal Information
+								<hr>
+							</h3>
+							<div class="col-md-6">
+								<label class="form-label">First Name</label>
+								{{ form.first_name}}				
+							</div>
+							<div class="col-md-6">
+								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+								{{ form.middle_name}}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Last Name</label>
+								{{ form.last_name}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Extension Name</label>
+								{{ form.extension_name}}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Email</label>
+								{{ form.email}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Birth Date</label>
+								{{ form.birthdate }}				
+							</div>
+						</div>   
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Birth Place</label>
+								{{ form.birthplace}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Birthdate</label>
+								{{ form.birthdate }}				
+							</div>
+						</div>     
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Sex</label>
+								{{ form.sex}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Civil Status</label>
+								{{ form.civil_status }}				
+							</div>
+						</div>     
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card py-2">
+					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Height</label>
+								{{ form.height }}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Weight</label>
+								{{ form.weight }}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Blood Type</label>
+								{{ form.blood_type }}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Citizenship</label>
+								{{ form.citizenship }}				
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row py-2">
+			<div class="col-md-8">
+				<div class="card p-4 mb-3">
+						<h3 class="text-primary">
+							Address
+							<hr>
+						</h3>
+						
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Address1</label>
+								{{ form.address1 }}
+							</div>
+						</div>    
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Address2</label>
+								{{ form.address2 }}
+							</div>
+						</div>    
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Address3</label>
+								{{ form.address3 }}
+							</div>
+						</div>    
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Address4</label>
+								{{ form.address4 }}
+							</div>
+						</div>    
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Provincial Address</label>
+								{{ form.provincial_address }}
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">If Provice</label>
+								{{ form.if_province }}
+							</div>
+						</div>       
+										
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card py-2">
+					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Telephone Number</label>
+								{{ form.zip_code }}
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Mobile Number</label>
+								{{ form.zip_code }}
+							</div>
+						</div>
+						<div class="row mb-3">
+								<div class="col-md-12">
+								<label class="form-label">Zip Code</label>
+								{{ form.zip_code }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row py-2">
+			<div class="col-md-8">
+				<div class="card p-4 mb-3">
+						<div class="row mb-3">
+							<h3 class="text-primary">
+								Spouse Information
+								<hr>
+							</h3>
+							<div class="col-md-6">
+								<label class="form-label">First Name</label>
+								{{ form.s_first_name}}				
+							</div>
+							<div class="col-md-6">
+								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+								{{ form.s_middle_name}}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Last Name</label>
+								{{ form.s_last_name}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Extension Name</label>
+								{{ form.s_extension_name}}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Occupation</label>
+								{{ form.s_occupation}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Employer</label>
+								{{ form.s_employer }}				
+							</div>
+						</div>   
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Business Address</label>
+								{{ form.s_business_address}}				
+							</div>
+						</div>     
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card py-2">
+					<div class="card-body">
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">Mobile Number</label>
+								{{ form.s_mobile_no }}				
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row py-2">
+			<div class="col-md-8">
+				<div class="card p-4 mb-3">
+						<div class="row mb-3">
+							<h3 class="text-primary">
+								Father Information
+								<hr>
+							</h3>
+							<div class="col-md-6">
+								<label class="form-label">First Name</label>
+								{{ form.f_first_name}}				
+							</div>
+							<div class="col-md-6">
+								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+								{{ form.f_middle_name}}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Last Name</label>
+								{{ form.f_last_name}}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Extension Name</label>
+								{{ form.f_extension_name}}				
+							</div>
+						</div>
+						
+				</div>
+			</div>
+		</div>
+
+		<div class="row py-2">
+			<div class="col-md-8">
+				<div class="card p-4 mb-3">
+						<div class="row mb-3">
+							<h3 class="text-primary">
+								Mother Information
+								<hr>
+							</h3>
+							<div class="col-md-6">
+								<label class="form-label">First Name</label>
+								{{ form.m_first_name}}				
+							</div>
+							<div class="col-md-6">
+								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+								{{ form.m_middle_name}}				
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Last Name</label>
+								{{ form.m_last_name}}				
+							</div>
+						</div>
+						
+				</div>
+			</div>
+		</div>
+
+			<button class="btn btn-primary text-light" type="submit">Register</button>
+			<a href="\emp_list\" class="btn btn-outline-secondary text-dark">Cancel</a>
+		</form>
+	</div>
+</div>
 {% endblock %}
