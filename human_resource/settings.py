@@ -85,9 +85,9 @@ WSGI_APPLICATION = 'human_resource.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hrds',
+        'NAME': 'hrdrs',
         'USER': 'postgres',
-        'PASSWORD': 'TicketSystem2021',
+        'PASSWORD': 'rootharvey',
         'HOST': 'localhost',
         'PORT': '5432',
     }
