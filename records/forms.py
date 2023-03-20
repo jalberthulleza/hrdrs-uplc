@@ -10,7 +10,20 @@ class TimeInput(forms.TimeInput):
 	input_type = 'time'
 
 class Emp_Info_Form(forms.ModelForm):
-	date_hired = forms.DateField(widget=DateInput)
+	emp_status = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	gsis = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	pagibig = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	philhealth = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	sss = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	tin = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	agency_emp_no = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	date_hired = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	present_designation = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	salary_grade = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	skills = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	non_acad_distinction = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	organization = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
 	class Meta:
 		model = Employment_Info
 		fields = [
