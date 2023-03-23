@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-	{{ license.name }}
+	<!-- {{ license.name }}
 	{{ license.rating }}
 	{{ license.exam_date|date:"M d, Y" }}
 	{{ license.exam_place }}
@@ -10,5 +10,58 @@
 	<form method='POST'>{% csrf_token %}
 		{{ form }}
 		<button type='submit'>Edit</button>
-	</form>
+	</form> -->
+
+<div class="row justify-content-center">
+	<div class="col-md-12">
+		<form method='POST'>{% csrf_token %}
+			<div class="row pt-4 pb-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
+							<div class="row mb-3">
+								<h3 class="text-primary">
+									Family
+									<hr>
+								</h3>
+								<div class="col-md-6">
+									<label class="form-label">Name</label>
+									{{ form.name }}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Rating</label>
+									{{ form.rating }}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Exam Date</label>
+									{{ form.exam_date }}
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Exam Place</label>
+									{{ form.exam_place }}
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">License No.</label>
+									{{ form.license_no }}
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Validity Date</label>
+									{{ form.validity_date }}
+
+								</div>
+							</div>
+									
+						</div>
+					</div>
+				</div>
+			<button class="btn btn-primary text-light" type="submit">Update</button>
+			<a href="#" class="btn btn-outline-secondary text-dark">Back</a>
+		</form>
+	</div>
+</div>
 {% endblock %}

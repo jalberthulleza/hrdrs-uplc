@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-	{{ family.last_name }}
+	<!-- {{ family.last_name }}
 	{{ family.first_name }}
 	{{ family.middle_name }}
 	{{ family.birthdate|date:"M d, Y" }}
@@ -9,5 +9,52 @@
 	<form method='POST'>{% csrf_token %}
 		{{ form }}
 		<button type='submit'>Edit</button>
-	</form>
+	</form> -->
+
+
+<div class="row justify-content-center">
+	<div class="col-md-12">
+		<form method='POST'>{% csrf_token %}
+			<div class="row pt-4 pb-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
+							<div class="row mb-3">
+								<h3 class="text-primary">
+									Family
+									<hr>
+								</h3>
+								<div class="col-md-6">
+									<label class="form-label">First Name</label>
+									{{ form.first_name}}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+									{{ form.middle_name}}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Last Name</label>
+									{{ form.last_name}}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+									{{ form.birthdate}}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Relation</label>
+									{{ form.relation}}				
+								</div>
+							</div>
+								
+						</div>
+					</div>
+				</div>
+			<button class="btn btn-primary text-light" type="submit">Update</button>
+			<a href="#" class="btn btn-outline-secondary text-dark">Back</a>
+		</form>
+	</div>
+</div>
 {% endblock %}

@@ -31,36 +31,81 @@ class Emp_Info_Form(forms.ModelForm):
 			'emp_status', 'gsis', 'pagibig', 'philhealth', 'sss', 'tin', 'agency_emp_no', 'date_hired', 'present_designation', 'salary_grade', 'skills', 'non_acad_distinction', 'organization']
 
 class Educ_BG_Form(forms.ModelForm):
-	e_graduation_date = forms.DateField(widget=DateInput)
-	h_graduation_date = forms.DateField(widget=DateInput)
-	c_start_year = forms.DateField(widget=DateInput)
-	c_end_year = forms.DateField(widget=DateInput)
-	c_graduation_date = forms.DateField(widget=DateInput)
-	m_start_year = forms.DateField(widget=DateInput)
-	m_end_year = forms.DateField(widget=DateInput)
-	m_graduation_date = forms.DateField(widget=DateInput)
-	d_start_year = forms.DateField(widget=DateInput)
-	d_end_year = forms.DateField(widget=DateInput)
-	d_graduation_date = forms.DateField(widget=DateInput)
+	e_school_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	e_earned = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	e_graduation_date = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	e_honors = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+	h_school_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	h_earned = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	h_graduation_date = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	h_honors = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+	c_school_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	c_course = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	c_start_year= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	c_end_year= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	c_graduation_date = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	c_earned = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	c_honors = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+	m_school_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	m_course = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	m_start_year= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	m_end_year= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	m_graduation_date = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	m_earned = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	m_honors = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+	d_school_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	d_course = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	d_start_year= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	d_end_year= forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	d_graduation_date = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	d_earned = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	d_honors = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+	
 	class Meta:
 		model = Educational_BG
 		fields = ['e_school_name', 'e_earned', 'e_graduation_date', 'e_honors', 'h_school_name', 'h_earned', 'h_graduation_date', 'h_honors', 'c_school_name', 'c_course', 'c_start_year', 'c_end_year', 'c_graduation_date', 'c_honors', 'm_school_name', 'm_course', 'm_start_year', 'm_end_year', 'm_earned', 'm_graduation_date', 'm_honors', 'd_school_name', 'd_course', 'd_start_year', 'd_end_year', 'd_earned', 'd_graduation_date', 'd_honors']
 
 class License_Form(forms.ModelForm):
-	exam_date = forms.DateField(widget=DateInput)
-	validity_date = forms.DateField(widget=DateInput)
+	name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	rating = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	exam_place = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	license_no = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	exam_date = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
+	validity_date =forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
 	class Meta:
 		model = License
 		fields = ['name', 'rating', 'exam_date', 'exam_place', 'license_no', 'validity_date']
 
 class Family_Form(forms.ModelForm):
-	birthdate = forms.DateField(widget=DateInput)
+	last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	middle_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	relation = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control'}))
+	birthdate = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-control', 'type': 'date'}))
 
 	class Meta:
 		model = Family
 		fields = ['last_name', 'first_name', 'middle_name', 'birthdate','relation']
 
 class Question_Form(forms.ModelForm):
+	q1 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q2 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q3 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q4 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q5 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q6 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q7 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q8 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q9 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q10 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q11 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+	q12 = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'form-check-input', 'type':'checkbox'}))
+
 	class Meta:
 		model = Question
 		fields = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10', 'q11', 'q12']

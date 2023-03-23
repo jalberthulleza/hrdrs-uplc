@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
---PERSONAL INFORMATION--
+<!-- --PERSONAL INFORMATION--
 <br>
 {{ emp.user.last_name }}
 {{ emp.user.first_name }}
@@ -155,7 +155,7 @@
 <form method='POST'>{% csrf_token %}
 	{{ q_form }}
 	<button type='submit'>Edit</button>
-</form>
+</form> -->
 
 
 
@@ -166,297 +166,299 @@
 			<h1 class="fw-bold">Edit Employee</h1>
 		</div>
 		<form method='POST'>{% csrf_token %}
-		<div class="row py-4">
-			<div class="col-md-8">
-				<div class="card p-4 mb-3">
-						<div class="row mb-3">
-							<h3 class="text-primary">
-								Personal Information
-								<hr>
-							</h3>
-							<div class="col-md-6">
-								<label class="form-label">First Name</label>
-								{{ info_form.first_name}}				
+			<div class="row py-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
+							<div class="row mb-3">
+								<h3 class="text-primary">
+									Personal Information
+									<hr>
+								</h3>
+								<div class="col-md-6">
+									<label class="form-label">First Name</label>
+									{{ info_form.first_name}}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+									{{ info_form.middle_name}}				
+								</div>
 							</div>
-							<div class="col-md-6">
-								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
-								{{ info_form.middle_name}}				
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Last Name</label>
+									{{ info_form.last_name }}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Extension Name</label>
+									{{ info_form.extension_name}}				
+								</div>
 							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Last Name</label>
-								{{ info_form.last_name }}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Extension Name</label>
-								{{ info_form.extension_name}}				
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Email</label>
-								{{ info_form.email}}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Birth Date</label>
-								{{ info_form.birthdate }}				
-							</div>
-						</div>   
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Birth Place</label>
-								{{ info_form.birthplace}}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Birthdate</label>
-								{{ info_form.birthdate }}				
-							</div>
-						</div>     
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Sex</label>
-								{{ info_form.sex}}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Civil Status</label>
-								{{ info_form.civil_status }}				
-							</div>
-						</div>     
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card py-2">
-					<div class="card-body">
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Height</label>
-								{{ info_form.height }}				
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Weight</label>
-								{{ info_form.weight }}				
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Blood Type</label>
-								{{ info_form.blood_type }}				
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Citizenship</label>
-								{{ info_form.citizenship }}				
-							</div>
-						</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Email</label>
+									{{ info_form.email}}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Birth Date</label>
+									{{ info_form.birthdate }}				
+								</div>
+							</div>   
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Birth Place</label>
+									{{ info_form.birthplace}}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Birthdate</label>
+									{{ info_form.birthdate }}				
+								</div>
+							</div>     
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Sex</label>
+									{{ info_form.sex}}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Civil Status</label>
+									{{ info_form.civil_status }}				
+								</div>
+							</div>     
 					</div>
 				</div>
-			</div>
-		</div>
-
-		<div class="row py-2">
-			<div class="col-md-8">
-				<div class="card p-4 mb-3">
-						<h3 class="text-primary">
-							Address
-							<hr>
-						</h3>
-						
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Address1</label>
-								{{ info_form.address1 }}
-							</div>
-						</div>    
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Address2</label>
-								{{ info_form.address2 }}
-							</div>
-						</div>    
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Address3</label>
-								{{ info_form.address3 }}
-							</div>
-						</div>    
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Address4</label>
-								{{ info_form.address4 }}
-							</div>
-						</div>    
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Provincial Address</label>
-								{{ info_form.provincial_address }}
-							</div>
-						</div> 
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">If Provice</label>
-								{{ info_form.if_province }}
-							</div>
-						</div>       
-										
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card py-2">
-					<div class="card-body">
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Telephone Number</label>
-								{{ info_form.zip_code }}
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Mobile Number</label>
-								{{ info_form.zip_code }}
-							</div>
-						</div>
-						<div class="row mb-3">
+				<div class="col-md-4">
+					<div class="card py-2">
+						<div class="card-body">
+							<div class="row mb-3">
 								<div class="col-md-12">
-								<label class="form-label">Zip Code</label>
-								{{ info_form.zip_code }}
+									<label class="form-label">Height</label>
+									{{ info_form.height }}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Weight</label>
+									{{ info_form.weight }}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Blood Type</label>
+									{{ info_form.blood_type }}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Citizenship</label>
+									{{ info_form.citizenship }}				
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-
-		<div class="row py-2">
-			<div class="col-md-8">
-				<div class="card p-4 mb-3">
-						<div class="row mb-3">
+			<div class="row py-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
 							<h3 class="text-primary">
-								Spouse Information
+								Address
 								<hr>
 							</h3>
-							<div class="col-md-6">
-								<label class="form-label">First Name</label>
-								{{ info_form.s_first_name}}				
-							</div>
-							<div class="col-md-6">
-								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
-								{{ info_form.s_middle_name}}				
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Last Name</label>
-								{{ info_form.s_last_name}}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Extension Name</label>
-								{{ info_form.s_extension_name}}				
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Occupation</label>
-								{{ info_form.s_occupation}}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Employer</label>
-								{{ info_form.s_employer }}				
-							</div>
-						</div>   
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Business Address</label>
-								{{ info_form.s_business_address}}				
-							</div>
-						</div>     
+							
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Address1</label>
+									{{ info_form.address1 }}
+								</div>
+							</div>    
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Address2</label>
+									{{ info_form.address2 }}
+								</div>
+							</div>    
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Address3</label>
+									{{ info_form.address3 }}
+								</div>
+							</div>    
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Address4</label>
+									{{ info_form.address4 }}
+								</div>
+							</div>    
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Provincial Address</label>
+									{{ info_form.provincial_address }}
+								</div>
+							</div> 
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">If Provice</label>
+									{{ info_form.if_province }}
+								</div>
+							</div>       
+											
+					</div>
 				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="card py-2">
-					<div class="card-body">
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Mobile Number</label>
-								{{ info_form.s_mobile_no }}				
+				<div class="col-md-4">
+					<div class="card py-2">
+						<div class="card-body">
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Telephone Number</label>
+									{{ info_form.zip_code }}
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Mobile Number</label>
+									{{ info_form.zip_code }}
+								</div>
+							</div>
+							<div class="row mb-3">
+									<div class="col-md-12">
+									<label class="form-label">Zip Code</label>
+									{{ info_form.zip_code }}
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="row py-2">
-			<div class="col-md-8">
-				<div class="card p-4 mb-3">
-						<div class="row mb-3">
-							<h3 class="text-primary">
-								Father Information
-								<hr>
-							</h3>
-							<div class="col-md-6">
-								<label class="form-label">First Name</label>
-								{{ info_form.f_first_name}}				
+
+			<div class="row py-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
+							<div class="row mb-3">
+								<h3 class="text-primary">
+									Spouse Information
+									<hr>
+								</h3>
+								<div class="col-md-6">
+									<label class="form-label">First Name</label>
+									{{ info_form.s_first_name}}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+									{{ info_form.s_middle_name}}				
+								</div>
 							</div>
-							<div class="col-md-6">
-								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
-								{{ info_form.f_middle_name}}				
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Last Name</label>
+									{{ info_form.s_last_name}}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Extension Name</label>
+									{{ info_form.s_extension_name}}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Occupation</label>
+									{{ info_form.s_occupation}}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Employer</label>
+									{{ info_form.s_employer }}				
+								</div>
+							</div>   
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Business Address</label>
+									{{ info_form.s_business_address}}				
+								</div>
+							</div>     
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card py-2">
+						<div class="card-body">
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Mobile Number</label>
+									{{ info_form.s_mobile_no }}				
+								</div>
 							</div>
 						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Last Name</label>
-								{{ info_form.f_last_name}}				
-							</div>
-							<div class="col-md-6">
-								<label class="form-label">Extension Name</label>
-								{{ info_form.f_extension_name}}				
-							</div>
-						</div>
-						
+					</div>
 				</div>
 			</div>
-		</div>
 
-		<div class="row py-2">
-			<div class="col-md-8">
-				<div class="card p-4 mb-3">
-						<div class="row mb-3">
-							<h3 class="text-primary">
-								Mother Information
-								<hr>
-							</h3>
-							<div class="col-md-6">
-								<label class="form-label">First Name</label>
-								{{ info_form.m_first_name}}				
+			<div class="row py-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
+							<div class="row mb-3">
+								<h3 class="text-primary">
+									Father Information
+									<hr>
+								</h3>
+								<div class="col-md-6">
+									<label class="form-label">First Name</label>
+									{{ info_form.f_first_name}}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+									{{ info_form.f_middle_name}}				
+								</div>
 							</div>
-							<div class="col-md-6">
-								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
-								{{ info_form.m_middle_name}}				
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Last Name</label>
+									{{ info_form.f_last_name}}				
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Extension Name</label>
+									{{ info_form.f_extension_name}}				
+								</div>
 							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-6">
-								<label class="form-label">Last Name</label>
-								{{ info_form.m_last_name}}				
-							</div>
-						</div>
-						
+							
+					</div>
 				</div>
 			</div>
-		</div>
+
+			<div class="row py-2">
+				<div class="col-md-8">
+					<div class="card p-4 mb-3">
+							<div class="row mb-3">
+								<h3 class="text-primary">
+									Mother Information
+									<hr>
+								</h3>
+								<div class="col-md-6">
+									<label class="form-label">First Name</label>
+									{{ info_form.m_first_name}}				
+								</div>
+								<div class="col-md-6">
+									<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
+									{{ info_form.m_middle_name}}				
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-6">
+									<label class="form-label">Last Name</label>
+									{{ info_form.m_last_name}}				
+								</div>
+							</div>
+							
+					</div>
+				</div>
+			</div>
 
 			<button class="btn btn-primary text-light" type="submit">Save</button>
 			<a href="\emp_list\" class="btn btn-outline-secondary text-dark">Cancel</a>
 		</form>
 
+		<!-- Family -->
 		<div class="row py-2">
 			<div class="col-md-8">
 				<div class="card p-4 mb-3">
+					<form method='POST'>{% csrf_token %}
 						<div class="row mb-3">
 							<h3 class="text-primary">
 								Family
@@ -464,29 +466,30 @@
 							</h3>
 							<div class="col-md-6">
 								<label class="form-label">First Name</label>
-								{{ info_form.m_first_name}}				
+								{{ fam_form.first_name}}				
 							</div>
 							<div class="col-md-6">
 								<label for="exampleFormControlInput1" class="form-label">Middle Name</label>
-								{{ info_form.m_middle_name}}				
+								{{ fam_form.middle_name}}				
 							</div>
 						</div>
 						<div class="row mb-3">
 							<div class="col-md-6">
 								<label class="form-label">Last Name</label>
-								{{ info_form.m_last_name}}				
+								{{ fam_form.last_name}}				
 							</div>
 							<div class="col-md-6">
 								<label class="form-label">Birthdate</label>
-								<!-- {{ info_form.m_last_name}}	 -->
+								{{ fam_form.birthdate}}	
 							</div>
 						</div>
 						<div class="row mb-3">
 							<div class="col-md-6">
 								<label class="form-label">Relation</label>
-								<!-- {{ info_form.m_last_name}}	 -->
+								{{ fam_form.relation}}	
 							</div>
 						</div>
+						<button type='submit' class="btn btn-primary text-white"><i class="bi bi-file-plus-fill"></i> Add</button>
 						<table class="table px-0">
 							<thead>
 							  <tr>
@@ -507,14 +510,16 @@
 							{% endfor %}
 							</tbody>
 						</table>
-					
+					</form>
 				</div>
 			</div>
 		</div>
-		<form method='POST'>{% csrf_token %}
-		<div class="row py-4">
+		<!-- /Family -->
+		<!-- Employment -->
+		<div class="row py-2">
 			<div class="col-md-8">
 				<div class="card p-4 mb-3">
+					<form method='POST'>{% csrf_token %}
 						<div class="row mb-3">
 							<h3 class="text-primary">
 								Employment Information
@@ -571,211 +576,358 @@
 						</div>     
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="card py-2">
-					<div class="card-body">
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Skills</label>
-								{{ emp_form.skills }}		
+				<div class="col-md-4">
+					<div class="card py-2">
+						<div class="card-body">
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Skills</label>
+									{{ emp_form.skills }}		
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Non-Academic Destinction</label>
+									{{ emp_form.non_acad_distinction }}			
+								</div>
+							</div>
+							<div class="row mb-3">
+								<div class="col-md-12">
+									<label class="form-label">Organization</label>
+									{{ emp_form.organization }}		
+								</div>
 							</div>
 						</div>
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Non-Academic Destinction</label>
-								{{ emp_form.non_acad_distinction }}			
-							</div>
-						</div>
-						<div class="row mb-3">
-							<div class="col-md-12">
-								<label class="form-label">Organization</label>
-								{{ emp_form.organization }}		
-							</div>
-						</div>
-					</div>
+					</form>
 				</div>
 			</div>
-		</form>
+		</div>
+		
+		<!-- /Employment -->
 
-		<form method='POST'>{% csrf_token %}
-			<div class="row py-4">
-				<div class="col-md-12">
-					<div class="card p-4 mb-3">
+		<!-- Education -->
+		<div class="row py-2">
+			<div class="col-md-12">
+				<div class="card p-4 mb-3">
+					<form method='POST'>{% csrf_token %}
+						<div class="row mb-3">
+							<h3 class="text-primary">
+								Educational Background
+								<hr>
+							</h3>
+							<h4 class="text-muted">Elementary
+								<hr>
+							</h4>
+							<div class="col-md-6">
+								<label class="form-label">School Name</label>
+								{{ educ_form.e_school_name }}			
+							</div>
+							<div class="col-md-6">
+								<label for="exampleFormControlInput1" class="form-label">Earned</label>
+								{{ educ_form.e_earned }}	
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Graduation Date</label>
+								{{ educ_form.e_graduation_date }}				
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Honors</label>
+								{{ educ_form.e_honors }}		
+							</div>
+						</div>
+						<h4 class="text-muted">High School
+							<hr>
+						</h4>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">School Name</label>
+								{{ educ_form.h_school_name }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Earned</label>
+								{{ educ_form.h_earned }}			
+							</div>
+						</div>   
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Graduation Date</label>
+								{{ educ_form.h_graduation_date }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Honors</label>
+								{{ educ_form.h_honors }}		
+							</div>
+						</div> 
+						<h4 class="text-muted">College
+							<hr>
+						</h4>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">School Name</label>
+								{{ educ_form.c_school_name }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Course</label>
+								{{ educ_form.c_course }}			
+							</div>
+						</div>   
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Start Year</label>
+								{{ educ_form.c_start_year }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">End Year</label>
+								{{ educ_form.c_end_year }}		
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Earned</label>
+								{{ educ_form.c_earned }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Graduation Date</label>
+								{{ educ_form.c_graduation_date }}		
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Honors</label>
+								{{ educ_form.c_honors }}			
+							</div>
+						</div>
+						<h4 class="text-muted">Masters Degree
+							<hr>
+						</h4>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">School Name</label>
+								{{ educ_form.m_school_name }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Course</label>
+								{{ educ_form.m_course }}			
+							</div>
+						</div>   
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Start Year</label>
+								{{ educ_form.m_start_year }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">End Year</label>
+								{{ educ_form.m_end_year }}		
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Earned</label>
+								{{ educ_form.m_earned }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Graduation Date</label>
+								{{ educ_form.m_graduation_date }}		
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Honors</label>
+								{{ educ_form.m_graduation_date }}			
+							</div>
+						</div>    
+						<h4 class="text-muted">Doctorate Degree
+							<hr>
+						</h4>
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">School Name</label>
+								{{ educ_form.d_school_name }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Course</label>
+								{{ educ_form.d_course }}			
+							</div>
+						</div>   
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Start Year</label>
+								{{ educ_form.d_start_year }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">End Year</label>
+								{{ educ_form.d_end_year }}		
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Earned</label>
+								{{ educ_form.d_earned }}			
+							</div>
+							<div class="col-md-6">
+								<label class="form-label">Graduation Date</label>
+								{{ educ_form.d_graduation_date }}		
+							</div>
+						</div> 
+						<div class="row mb-3">
+							<div class="col-md-6">
+								<label class="form-label">Honors</label>
+								{{ educ_form.d_graduation_date }}			
+							</div>
+						</div>         
+					</form>	
+				</div>
+					<button class="btn btn-primary text-light" type="submit">Save</button>
+					<a href="\emp_list\" class="btn btn-outline-secondary text-dark">Cancel</a>
+			</div>
+		</div>
+		<!-- /Education -->
+		<!-- License -->
+		<div class="row py-2">
+			<div class="col-md-12">
+				<div class="card p-4 mb-3">
+						<form action="POST">{% csrf_token %}
 							<div class="row mb-3">
 								<h3 class="text-primary">
-									Educational Background
+									License
 									<hr>
 								</h3>
-								<h4 class="text-muted">Elementary
-									<hr>
-								</h4>
 								<div class="col-md-6">
-									<label class="form-label">School Name</label>
-									{{ educ_form.e_school_name }}			
+									<label class="form-label">Name</label>
+									{{ lic_form.name }}				
 								</div>
 								<div class="col-md-6">
-									<label for="exampleFormControlInput1" class="form-label">Earned</label>
-									{{ educ_form.e_earned }}	
+									<label for="exampleFormControlInput1" class="form-label">Rating</label>
+									{{ lic_form.rating }}				
 								</div>
 							</div>
 							<div class="row mb-3">
 								<div class="col-md-6">
-									<label class="form-label">Graduation Date</label>
-									{{ educ_form.e_graduation_date }}				
+									<label class="form-label">Rating</label>
+									{{ lic_form.exam_place}}				
 								</div>
 								<div class="col-md-6">
-									<label class="form-label">Honors</label>
-									{{ educ_form.e_honors }}		
+									<label class="form-label">License No.</label>
+									{{ lic_form.license_no}}	
 								</div>
 							</div>
-							<h4 class="text-muted">High School
-								<hr>
-							</h4>
 							<div class="row mb-3">
 								<div class="col-md-6">
-									<label class="form-label">School Name</label>
-									{{ educ_form.h_school_name }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Earned</label>
-									{{ educ_form.h_earned }}			
-								</div>
-							</div>   
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Graduation Date</label>
-									{{ educ_form.h_graduation_date }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Honors</label>
-									{{ educ_form.h_honors }}		
-								</div>
-							</div> 
-							<h4 class="text-muted">College
-								<hr>
-							</h4>
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">School Name</label>
-									{{ educ_form.c_school_name }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Course</label>
-									{{ educ_form.c_course }}			
-								</div>
-							</div>   
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Start Year</label>
-									{{ educ_form.c_start_year }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">End Year</label>
-									{{ educ_form.c_end_year }}		
-								</div>
-							</div> 
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Earned</label>
-									{{ educ_form.c_earned }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Graduation Date</label>
-									{{ educ_form.c_graduation_date }}		
-								</div>
-							</div> 
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Honors</label>
-									{{ educ_form.c_honors }}			
+									<label class="form-label">Date of Validity</label>
+									{{ lic_form.validity_date}}	
 								</div>
 							</div>
-							<h4 class="text-muted">Masters Degree
-								<hr>
-							</h4>
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">School Name</label>
-									{{ educ_form.m_school_name }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Course</label>
-									{{ educ_form.m_course }}			
-								</div>
-							</div>   
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Start Year</label>
-									{{ educ_form.m_start_year }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">End Year</label>
-									{{ educ_form.m_end_year }}		
-								</div>
-							</div> 
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Earned</label>
-									{{ educ_form.m_earned }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Graduation Date</label>
-									{{ educ_form.m_graduation_date }}		
-								</div>
-							</div> 
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Honors</label>
-									{{ educ_form.m_graduation_date }}			
-								</div>
-							</div>    
-							<h4 class="text-muted">Doctorate Degree
-								<hr>
-							</h4>
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">School Name</label>
-									{{ educ_form.d_school_name }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Course</label>
-									{{ educ_form.d_course }}			
-								</div>
-							</div>   
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Start Year</label>
-									{{ educ_form.d_start_year }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">End Year</label>
-									{{ educ_form.d_end_year }}		
-								</div>
-							</div> 
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Earned</label>
-									{{ educ_form.d_earned }}			
-								</div>
-								<div class="col-md-6">
-									<label class="form-label">Graduation Date</label>
-									{{ educ_form.d_graduation_date }}		
-								</div>
-							</div> 
-							<div class="row mb-3">
-								<div class="col-md-6">
-									<label class="form-label">Honors</label>
-									{{ educ_form.d_graduation_date }}			
-								</div>
-							</div>         
-							
-					</div>
-						<button class="btn btn-primary text-light" type="submit">Save</button>
-						<a href="\emp_list\" class="btn btn-outline-secondary text-dark">Cancel</a>
+							<button type='submit' class="btn btn-primary text-white"><i class="bi bi-file-plus-fill"></i> Add</button>
+						</form>
+						<div class="table-responsive">
+							<table class="table px-0">
+								<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Rating</th>
+									<th scope="col">Exam Date</th>
+									<th scope="col">Exam Place</th>
+									<th scope="col">License No.</th>
+									<th scope="col">Date of Validity</th>
+									<th></th>
+								</tr>
+								</thead>
+								<tbody>
+								{% for license in emp_license %}
+								<tr>
+									<td>{{ license.name }}</td>
+									<td>{{ license.rating  }}</td>
+									<td>{{ license.exam_date }}</td>
+									<td>{{ license.exam_place }}</td>
+									<td>{{ license.license_no }}</td>
+									<td>{{ license.validity_date }}</td>
+									<td><a href="{% url 'license' license.id %}"><i class="bi bi-pencil"></i></a></td>
+								</tr>
+								{% endfor %}
+								</tbody>
+							</table>
+						</div>
+					
 				</div>
-			</form>
+			</div>
+		</div>
+		<!-- /License -->
 
-		
+		<!-- Questions -->
+		<div class="row py-2">
+			<div class="col-md-12">
+				<div class="card p-4 mb-3">
+					<form action="POST">{% csrf_token %}
+						<div class="row mb-3">
+							<h3 class="text-primary">
+								Questions
+								<hr>
+							</h3>
+							<div class="col-md-12">
+								<label class="form-label">1. Are you related by consanguinity or affinity to the appointing or recommending authority, or to the			
+									chief of bureau or office or to the person who has immediate supervision over you in the Office, 			
+									Bureau or Department where you will be apppointed.
+								</label>
+								<label>{{q_form.q1}} a. within the third degree? </label>
+								<p>{{q_form.q2}} b. within the fourth degree (for Local Government Unit - Career Employees)? </p>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">2.
+								</label>
+								<div>{{q_form.q3}} a. Have you ever been found guilty of any administrative offense?</div>
+								<p>{{q_form.q4}}  b. Have you been criminally charged before any court?</p>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">3.
+								</label>
+								<div>{{q_form.q5}} Have you ever been convicted of any crime or violation of any law, decree, ordinance or regulation by any court or tribunal?</div>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">4.
+								</label>
+								<div>{{q_form.q6}} Have you ever been separated from the service in any of the following modes: resignation, retirement, dropped from the rolls, dismissal, termination, end of term, finished contract or phased out (abolition) in the public or private sector?</div>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">5.
+								</label>
+								<div>{{q_form.q7}} a. Have you ever been a candidate in a national or local election held within the last year (except Barangay election)?</div>
+								<div>{{q_form.q8}}  b. Have you resigned from the government service during the three (3)-month period before the last election to promote/actively campaign for a national or local candidate?</div>
+							</div>
+						</div>
+						<div class="row mb-3">
+							<div class="col-md-12">
+								<label class="form-label">6.
+								</label>
+								<div>{{q_form.q9}} Have you acquired the status of an immigrant or permanent resident of another country?</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<label class="form-label">7. Pursuant to: (a) Indigenous People's Act (RA 8371); (b) Magna Carta for Disabled Persons (RA 7277); and (c) Solo Parents Welfare Act of 2000 (RA 8972), please answer the following items:
+								</label>
+								<div>{{q_form.q10}} a. Are you a member of any indigenous group?</div>
+								<div>{{q_form.q11}} b. Are you a person with disability?</div>
+								<p>{{q_form.q12}}  c. Are you a solo parent?</p>
+							</div>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+			<button class="btn btn-primary text-light" type="submit">Save</button>
+			<a href="\emp_list\" class="btn btn-outline-secondary text-dark">Cancel</a>
+		<!-- /Questions -->
+		</form>
 	</div>
 </div>
 {% endblock %}
